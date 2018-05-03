@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class Input{
-    
+   // private String[] fileNames = {"lol.txt", "test2.txt","test3.txt", "test4.txt","test5.txt"};
     public static void main(String[] args) {
         
         try {
@@ -12,7 +12,8 @@ public class Input{
             String line = reader.readLine();
              
             while(line != null) {
-           
+                int length = line.length(), i = 0;
+                String[] words = new String[300]; //for now leave it like that, one paragraph won't be longer
                 //tokenizer breaks the line into single words, ignoring punctuation marks
                 //punctuation marks and whitespace are set as delimiters which separate tokens (words)
                 //returnDelims flag is set to false so that delims are not returned (printed out) as tokens 
@@ -22,12 +23,15 @@ public class Input{
                 while(tokenizer.hasMoreTokens()) {
                     String token = tokenizer.nextToken();
                     token = token.toLowerCase();
-                    System.out.println(token + " ");
+                    words[i] = token;
+                    System.out.println(words[i] + " ");
+                    i++;
                 }
-                line = reader.readLine();        
+                line = reader.readLine(); 
             }
             
             reader.close();
+            
         }
          // FileNotFoundException is a subclass of IOException so can't be multi-catched
         catch (IOException e) {
