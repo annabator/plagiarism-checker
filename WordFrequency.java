@@ -7,51 +7,28 @@ import java.util.*;
 
 public class WordFrequency {
 
-    private ArrayList<String> paragraph;
+    private ArrayList<String> text;
     
     
     public WordFrequency(ArrayList<String> section) {
         
-        paragraph = section;
-    }
-    
-   // public Map<String, Integer> returnFrequency() { //why Integer not int as data type? + later return type 
-    
-    public static void main(String[] args) {    
+        text = section;
         HashMap<String, Integer> occurrences = new HashMap<String, Integer>();
-        
-        
-        //use hashmap or linkedhashmap and sortByValue --> many implications, e.g values can't be retrieved by key anymore, or:
-        //use treemap and somehow use it to sort by value (write your own methd)
 
-      occurrences.put("Zara",1);
-      occurrences.put("Mahnaz", 3);
-      occurrences.put("Ayan", 50);
-      
-      //Set<String> keySet = occurrences.keySet(); //look up entryset!
-      /*Iterator it = occurrences.entrySet().iterator();
-        
-        while (it.hasNext()) {
-            Integer key = keySetIterator.next();
-            
-            System.out.println(key + " " + occurrences.get(key) + "\n");
-        }*/
-        //iterate through the map
+        for(String word : text) {
+            int i = 0;   
+            if(occurrences.containsKey(word))
+                i = occurrences.get(word); //get the value (no of occurrences of word)
+            else i = 1;
+            //add entry: key = word, value = either 1 or last value + 1
+            occurrences.put(word, i);
+        }
+        //iterate through the whole map and print all entries
         for (HashMap.Entry<String, Integer> entry : occurrences.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
             System.out.println(key + " " + value + "\n");
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
     }
+   
 }
