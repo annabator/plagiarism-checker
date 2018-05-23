@@ -1,3 +1,16 @@
+/**
+ * Class textFile takes the index in the @param fileNames array as parameter in constructor.
+ *
+ * @exception IOException On input error for file reading.
+ *
+ * @param tokenizer is an instance of StringTokenizer.
+ * It breaks the text files into tokens.
+ *
+ * @see java.util.StringTokenizer#returnDelims(String str, String delim, boolean returnDelims) method has the returnDelims flag set to false.
+ * this way delimiter characters are not considered to be tokens and they only serve to separate the tokens.
+ * delimiters will thus not be included in the word count nor will they be printed out
+ */
+
 import java.util.*;
 import java.io.*;
 
@@ -38,6 +51,9 @@ public class textFile {
     }
     
     public  ArrayList<String> getText() {
+        /**
+         * This accessor method allows the Driver to get the tokenized content from desired file.
+         */
         return text;
     }    
 

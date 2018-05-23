@@ -1,3 +1,15 @@
+/**
+ * The Word Frequency Program compares the word count in two text files.
+ *
+ * @author Awantura Bator
+ * 
+ * This is the Driver class which contains the main method.
+ * It creates 5 instances of class textFile.
+ * @param reader faciliates user input (2 integers).
+ * Two chosen files are being compared in class WordFrequency2.
+ *
+ */
+
 import java.util.*;
 import java.util.Scanner;
 
