@@ -1,3 +1,4 @@
+
 /**
  * The Word Frequency Program compares the word count in two text files.
  *
@@ -39,10 +40,17 @@ public class Driver {
         // get the number of the first file
         System.out.println("Please enter the number of the file (from 1 to 5): ");
         int indexA = reader.nextInt(); //scan the next (and the only one) token of the input
-        
+        if(indexA<0 || indexA>5) {
+            System.out.println("Invalid input: the number has to be between 1 and 5!");
+            return; // terminate the program
+        }
         // get the number of the second file
         System.out.println("Please enter the number of the file you'd like to check file " + indexA +  " against: ");
         int indexB = reader.nextInt(); 
+         if(indexB<0 || indexB>5) {
+            System.out.println("Invalid input: the number has to be between 1 and 5!");
+            return; // terminate the program
+        }
         System.out.println("\n");
         
         // validation - are A, B, integers between 1 and 5? 
@@ -52,9 +60,7 @@ public class Driver {
         ArrayList<String> textB = files[indexB-1].getText();
         
         //compare the word counts for both files and print the result
-        WordFrequency2 freq2 = new WordFrequency2(textA, textB);
-
-       
+        WordFrequency2 freq2 = new WordFrequency2(textA, textB); 
         
     }
 }
