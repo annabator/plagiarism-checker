@@ -1,19 +1,15 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Iterator;
-import java.util.Set;
 import java.util.*;
 import java.io.*;
-import java.util.StringTokenizer;
 
 public class textFile {
 
     private ArrayList<String> text = new ArrayList<String>();  
-    private String[] fileNames = {"lol.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt"};
+    private String[] fileNames = {"test1.txt", "test2.txt", "test3.txt", "test4.txt", "test5.txt"};
     private int index;
     
     public textFile(int i) {
-        index = i; //VALIDATION --> 0 <= i <5, i = int
+        
+        index = i; 
         
         try {
             FileReader fr = new FileReader(fileNames[index]);
@@ -33,11 +29,6 @@ public class textFile {
             }   
             reader.close();  
             
-            
-           // for(String word : text) 
-             //   System.out.println(word);
-                
-            
         }
         
         catch (IOException e) {
@@ -49,6 +40,7 @@ public class textFile {
     public  ArrayList<String> getText() {
         return text;
     }    
+
 }   
 
     
